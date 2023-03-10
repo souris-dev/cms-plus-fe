@@ -1,4 +1,5 @@
-export const BACKEND_URL = 'http://localhost:8003/api'
+export const BACKEND_AUTH_URL = process.env.REACT_APP_AUTH_URL || 'http://localhost:8002';
+export const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8003/api'
 
 export const GET_ALL_CONTENT_TYPES = {
   url: `${BACKEND_URL}/contentTypes`,
