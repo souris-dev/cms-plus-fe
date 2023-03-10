@@ -2,9 +2,8 @@ import * as React from 'react';
 
 import './ContentTypeBuilder.css';
 
-import deleteFieldIcon from '../../assets/delete-field.png';
-import editFieldIcon from '../../assets/edit-field.png';
 import editCtypeNameIcon from '../../assets/edit-ctype-name.png';
+import { ContentTypeEntry, FieldEntry } from '../../components';
 
 const ContentTypeBuilder: React.FC = (): JSX.Element => {
   return <>
@@ -52,22 +51,9 @@ const ContentTypeBuilder: React.FC = (): JSX.Element => {
                   <div className="bg-generic-light cursor-pointer font-semibold border-dotted border-2 rounded-md flex items-center justify-center border-primary p-3 text-primary">
                     + New Type
                   </div>
-                  <div className="bg-primary shadow-sm cursor-pointer mt-4 font-bold text-sm rounded-md flex items-center justify-between p-4 text-white">
-                    <div>Company_Profile</div>
-                    <div>13</div>
-                  </div>
-                  <div className="bg-white shadow-sm cursor-pointer mt-4 font-bold text-sm rounded-md flex items-center justify-between p-4 text-gray-600">
-                    <div>Trials</div>
-                    <div>13</div>
-                  </div>
-                  <div className="bg-white shadow-sm cursor-pointer mt-4 font-bold text-sm rounded-md flex items-center justify-between p-4 text-gray-600">
-                    <div>Stages</div>
-                    <div>13</div>
-                  </div>
-                  <div className="bg-white shadow-sm cursor-pointer mt-4 font-bold text-sm rounded-md flex items-center justify-between p-4 text-gray-600">
-                    <div>People</div>
-                    <div>13</div>
-                  </div>
+                  
+                  <ContentTypeEntry selected contentTypeName="Company_Profile" numInstance={13} />
+                  <ContentTypeEntry contentTypeName="Company_Profile" numInstance={13} />
                 </div>
               </div>
             </div>
@@ -88,53 +74,9 @@ const ContentTypeBuilder: React.FC = (): JSX.Element => {
               Add another field
             </div>
 
-            <div className="bg-white shadow-sm mt-4 text-sm rounded-md flex items-center justify-between">
-              <div className="flex flex-row">
-                <div className="bg-cobalt-blue p-4 text-white rounded-l-md">Ab</div>
-                <div className="font-semibold text-gray-600 p-4">People</div>
-              </div>
-              <div className="font-normal text-gray-400">Text</div>
-              <div className="flex flex-row">
-                <button>
-                  <img src={editFieldIcon} className="mr-5 h-4" />
-                </button>
-                <button>
-                  <img src={deleteFieldIcon} className="mr-6 h-4" />
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-white shadow-sm mt-4 text-sm rounded-md flex items-center justify-between">
-              <div className="flex flex-row">
-                <div className="bg-cobalt-blue p-4 text-white rounded-l-md">Ab</div>
-                <div className="font-semibold text-gray-600 p-4">People</div>
-              </div>
-              <div className="font-normal text-gray-400">Text</div>
-              <div className="flex flex-row">
-                <button>
-                  <img src={editFieldIcon} className="mr-5 h-4" />
-                </button>
-                <button>
-                  <img src={deleteFieldIcon} className="mr-6 h-4" />
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-white shadow-sm mt-4 text-sm rounded-md flex items-center justify-between">
-              <div className="flex flex-row">
-                <div className="bg-cobalt-blue p-4 text-white rounded-l-md">Ab</div>
-                <div className="font-semibold text-gray-600 p-4">People</div>
-              </div>
-              <div className="font-normal text-gray-400">Text</div>
-              <div className="flex flex-row">
-                <button>
-                  <img src={editFieldIcon} className="mr-5 h-4" />
-                </button>
-                <button>
-                  <img src={deleteFieldIcon} className="mr-6 h-4" />
-                </button>
-              </div>
-            </div>
+            <FieldEntry fieldName="Name" />
+            <FieldEntry fieldName="Contact Number" />
+            <FieldEntry fieldName="Age" />
           </div>
         </div>
       </div>

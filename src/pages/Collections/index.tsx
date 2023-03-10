@@ -1,9 +1,7 @@
 import * as React from 'react';
+import { InstanceTableEntry } from '../../components';
 
 import './Collections.css';
-
-import deleteFieldIcon from '../../assets/delete-field.png';
-import editFieldIcon from '../../assets/edit-field.png';
 
 const Collections: React.FC = (): JSX.Element => {
   return <>
@@ -20,15 +18,15 @@ const Collections: React.FC = (): JSX.Element => {
             </div>
 
             <ul className="mt-4 list-disc">
-              <li className="mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer bg-black">Company_Profile</li>
-              <li className="mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer hover:bg-black">Trials</li>
-              <li className="mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer hover:bg-black">Stages</li>
-              <li className="mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer hover:bg-black">People</li>
+              <li><a className="block mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer bg-black">Company_Profile</a></li>
+              <li><a className="block mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer hover:bg-black">Trials</a></li>
+              <li><a className="block mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer hover:bg-black">Stages</a></li>
+              <li><a className="block mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer hover:bg-black">People</a></li>
             </ul>
 
-            <div className="font-semibold uppercase mt-8 hover:bg-black pt-1 pb-1 pl-4 pr-3">
+            <a href="/contentTypes" className="font-semibold block uppercase mt-8 hover:bg-black pt-1 pb-1 pl-4 pr-3">
               Content Type Builder
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -59,62 +57,16 @@ const Collections: React.FC = (): JSX.Element => {
               </div>
             </div>
             {/* Header end (table header) */}
-            
-            {/* Instance Entry Start */}
-            <div className="bg-white shadow-sm mt-4 text-sm rounded-md flex items-center">
-              <div className="flex flex-row flex-grow items-center">
-                <div className=" text-gray-600 items-center justify-center flex w-12 font-semibold rounded-l-md">1</div>
-                <div className="font-semibold text-gray-600 p-4 w-32">People</div>
-                <div className="font-semibold text-gray-600">Text</div>
-              </div>
 
-              <div className="flex flex-row">
-                <button>
-                  <img src={editFieldIcon} className="mr-5 h-4" />
-                </button>
-                <button>
-                  <img src={deleteFieldIcon} className="mr-6 h-4" />
-                </button>
-              </div>
-            </div>
-            {/* Instance Entry End */}
+            <InstanceTableEntry data={{
+              id: 1,
+              data: ['Name', '98798798798']
+            }} />
 
-            {/* Instance Entry Start */}
-            <div className="bg-white shadow-sm mt-4 text-sm rounded-md flex items-center">
-              <div className="flex flex-row flex-grow items-center">
-                <div className=" text-gray-600 items-center justify-center flex w-12 font-semibold rounded-l-md">1</div>
-                <div className="font-semibold text-gray-600 p-4 w-32">People</div>
-                <div className="font-semibold text-gray-600">Text</div>
-              </div>
-
-              <div className="flex flex-row">
-                <button>
-                  <img src={editFieldIcon} className="mr-5 h-4" />
-                </button>
-                <button>
-                  <img src={deleteFieldIcon} className="mr-6 h-4" />
-                </button>
-              </div>
-            </div>
-            {/* Instance Entry End */}
-            {/* Instance Entry Start */}
-            <div className="bg-white shadow-sm mt-4 text-sm rounded-md flex items-center">
-              <div className="flex flex-row flex-grow items-center">
-                <div className=" text-gray-600 items-center justify-center flex w-12 font-semibold rounded-l-md">1</div>
-                <div className="font-semibold text-gray-600 p-4 w-32">People</div>
-                <div className="font-semibold text-gray-600">Text</div>
-              </div>
-
-              <div className="flex flex-row">
-                <button>
-                  <img src={editFieldIcon} className="mr-5 h-4" />
-                </button>
-                <button>
-                  <img src={deleteFieldIcon} className="mr-6 h-4" />
-                </button>
-              </div>
-            </div>
-            {/* Instance Entry End */}
+            <InstanceTableEntry data={{
+              id: 2,
+              data: ['Name', '98798798798']
+            }} />
           </div>
         </div>
       </div>
