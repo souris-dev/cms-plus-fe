@@ -8,14 +8,36 @@ export interface ApiEndpoint {
 
 const makeRequest = async (
   apiEndpoint: ApiEndpoint,
-  options?: object
+  options?: object,
+  withAuth?: boolean
 ) => {
-  const requestConfig = {
+  console.log(withAuth);
+  if (withAuth == undefined) {
+    withAuth = true;
+    console.log(localStorage.getItem('jwt'))
+  }
+
+  const requestConfig = !withAuth ? {
     baseURL: BACKEND_URL,
     url: apiEndpoint.url,
     method: apiEndpoint.method,
     ...options
-  }
+  } : localStorage.getItem('jwt') != null ? {
+    baseURL: BACKEND_URL,
+    url: apiEndpoint.url,
+    method: apiEndpoint.method,
+    headers: {
+      'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+    },
+    ...options
+  } : {
+    baseURL: BACKEND_URL,
+    url: apiEndpoint.url,
+    method: apiEndpoint.method,
+    ...options
+  };
+
+  console.log(requestConfig);
 
   const { data } = await axios(requestConfig);
   return data;
