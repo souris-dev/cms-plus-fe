@@ -13,7 +13,8 @@ module.exports = {
         'slate-black': '#272727',
         'primary': '#5905ce',
         'generic-dull': '#d4d6e5',
-        'generic-light': '#f4f6ff'
+        'generic-light': '#f4f6ff',
+        'cobalt-blue': '#7691ff'
       },
       colors: {
         'btn-start': '#9469fe',
