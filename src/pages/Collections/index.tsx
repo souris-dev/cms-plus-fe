@@ -20,13 +20,13 @@ const Collections: React.FC = (): JSX.Element => {
             </div>
 
             <ul className="mt-4 list-disc">
-              <li className="mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer hover:bg-black">Company_Profile</li>
+              <li className="mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer bg-black">Company_Profile</li>
               <li className="mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer hover:bg-black">Trials</li>
               <li className="mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer hover:bg-black">Stages</li>
               <li className="mt-2 pt-1 pb-1 pl-4 pr-3 text-gray-400 cursor-pointer hover:bg-black">People</li>
             </ul>
 
-            <div className="font-semibold uppercase mt-8 bg-black pt-1 pb-1 pl-4 pr-3">
+            <div className="font-semibold uppercase mt-8 hover:bg-black pt-1 pb-1 pl-4 pr-3">
               Content Type Builder
             </div>
           </div>
@@ -41,8 +41,9 @@ const Collections: React.FC = (): JSX.Element => {
         <div className="flex-grow flex flex-row">
 
           <div className="bg-generic w-full pl-8 pr-8">
-            <div className="mt-8 text-3xl mb-8 font-bold text-gray-600 flex items-center">
+            <div className="mt-8 text-3xl mb-8 font-bold text-gray-600 flex items-center justify-between">
               <div>13 Entries Found</div>
+              <button className="font-semibold text-primary text-xl p-1">Add a new entry</button>
             </div>
 
             {/* Header start (table header) */}
