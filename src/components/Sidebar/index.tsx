@@ -41,7 +41,7 @@ const Sidebar: React.FC
               <SidebarCollectionEntry activeContentTypeId={collectionContentTypeId} contentTypeId={2} contentTypeName="Company_Profile" />
             </ul>
 
-            <a href="/contentTypes" className="font-semibold block uppercase mt-8 hover:bg-black pt-1 pb-1 pl-4 pr-3">
+            <a href="/contentTypes" className={`font-semibold block uppercase mt-8 ${isContentTypeBuilder ? 'bg-black' : 'hover:bg-black'} pt-1 pb-1 pl-4 pr-3`}>
               Content Type Builder
             </a>
           </div>
