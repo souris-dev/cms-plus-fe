@@ -1,13 +1,25 @@
 import * as React from 'react';
+import { useParams } from 'react-router-dom';
 import { InstanceTableEntry, Sidebar } from '../../components';
+import { GET_ALL_CONTENT_TYPES } from '../../constants/apiEndpoints';
+import makeRequest from '../../utils/makeRequest';
 
 import './Collections.css';
 
 const Collections: React.FC = (): JSX.Element => {
+  const { contentTypeId } = useParams();
+  const [contentTypes, setContentTypes] = React.useState<any[]>();
+
+  React.useEffect(() => {
+    makeRequest(GET_ALL_CONTENT_TYPES)
+      .then((data) => setContentTypes(data))
+      .catch((err) => console.error(err));
+  })
+
   return <>
     <div className="flex flex-row w-full min-h-screen max-h-screen">
       
-      <Sidebar />
+      <Sidebar contentTypes={contentTypes || []} />
 
       <div className="w-4/5 flex flex-col">
         <div className="w-full shadow-sm h-16 items-center flex text-gray-600 text-xl font-bold pl-6 flex-grow-0">

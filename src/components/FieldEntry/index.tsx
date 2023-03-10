@@ -9,13 +9,15 @@ import editFieldIcon from '../../assets/edit-field.png';
 const FieldEntryPropTypes = {
   contentTypeId: PropTypes.number,
   fieldId: PropTypes.number,
-  fieldName: PropTypes.string.isRequired
+  fieldName: PropTypes.string.isRequired,
+  onDeleteClick: PropTypes.func,
+  onEditClick: PropTypes.func
 }
 
 type FieldEntryProps = InferProps<typeof FieldEntryPropTypes>;
 
 const FieldEntry: React.FC<FieldEntryProps>
-  = ({ fieldName }: FieldEntryProps): JSX.Element => {
+  = ({ fieldName, onDeleteClick, onEditClick }: FieldEntryProps): JSX.Element => {
     return <>
       <div className="bg-white shadow-sm mt-4 text-sm rounded-md flex items-center justify-between">
         <div className="flex flex-row">
@@ -24,10 +26,10 @@ const FieldEntry: React.FC<FieldEntryProps>
         </div>
         <div className="font-normal text-gray-400">Text</div>
         <div className="flex flex-row">
-          <button>
+          <button onClick={() => onEditClick && onEditClick()}>
             <img src={editFieldIcon} className="mr-5 h-4" />
           </button>
-          <button>
+          <button onClick={() => onDeleteClick && onDeleteClick()}>
             <img src={deleteFieldIcon} className="mr-6 h-4" />
           </button>
         </div>
