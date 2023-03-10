@@ -6,7 +6,7 @@ import { ContentTypeEntry, FieldsDisplay, InputField, Modal, Sidebar, StyledButt
 
 const ContentTypeBuilder: React.FC = (): JSX.Element => {
   const [activeContentTypeId, setActiveContentTypeId] = React.useState<number>(-1);
-  const [createContentTypeModalOpen, setCreateContentTypeModelOpen] = React.useState<boolean>(false);
+  const [createContentTypeModalOpen, setCreateContentTypeModalOpen] = React.useState<boolean>(false);
 
   return <>
     <div className="flex flex-row w-full min-h-screen max-h-screen">
@@ -29,7 +29,7 @@ const ContentTypeBuilder: React.FC = (): JSX.Element => {
                 <div className="mt-5">
                   <button
                     className="bg-generic-light cursor-pointer w-full font-semibold border-dotted border-2 rounded-md flex items-center justify-center border-primary p-3 text-primary"
-                    onClick={() => setCreateContentTypeModelOpen(true)}
+                    onClick={() => setCreateContentTypeModalOpen(true)}
                   >
                     + New Type
                   </button>
@@ -61,7 +61,7 @@ const ContentTypeBuilder: React.FC = (): JSX.Element => {
       <Modal isOpen={createContentTypeModalOpen} buttons={
         [
           <button key={1} className="rounded-md p-2 font-semibold mb-4 mr-2"
-            onClick={() => setCreateContentTypeModelOpen(false)}>
+            onClick={() => setCreateContentTypeModalOpen(false)}>
             Cancel
           </button>,
           <StyledButton key={2} text="Create" className="ml-6 mb-4 mr-6 w-28" />
