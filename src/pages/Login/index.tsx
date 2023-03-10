@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import './Login.css';
 import loginBanner from '../../assets/login-banner.png';
+import { StyledButton } from '../../components';
 
 const Login: React.FC = (): JSX.Element => {
   return <>
@@ -31,7 +32,7 @@ const Login: React.FC = (): JSX.Element => {
           </div>
 
           <div className="w-full mt-10">
-            <button type="submit" className="bg-gradient-to-r from-btn-start to-btn-end text-white w-full p-2 rounded-md">Login</button>
+            <StyledButton type="submit" text="Login" className="w-full" />
           </div>
 
           <a href="#" className="mt-6 text-gray-400 underline">Forgot password?</a>

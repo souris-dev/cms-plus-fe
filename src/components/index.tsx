@@ -1,5 +1,3 @@
-export { default as Footer } from './Footer';
-export { default as Header } from './Header';
 export { default as InstanceTableEntry } from './InstanceTableEntry';
 
 export { default as ContentTypeEntry } from './ContentTypeEntry';
@@ -11,3 +9,9 @@ export { default as FieldsDisplay } from './FieldsDisplay';
 export { default as Sidebar } from './Sidebar';
 
 export { default as SidebarCollectionEntry } from './SidebarCollectionEntry';
+
+export { default as Modal } from './Modal';
+
+export { default as InputField } from './InputField';
+
+export { default as StyledButton } from './StyledButton';

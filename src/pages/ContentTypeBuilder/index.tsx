@@ -2,10 +2,11 @@ import * as React from 'react';
 
 import './ContentTypeBuilder.css';
 
-import { ContentTypeEntry, FieldsDisplay, Sidebar } from '../../components';
+import { ContentTypeEntry, FieldsDisplay, InputField, Modal, Sidebar, StyledButton } from '../../components';
 
 const ContentTypeBuilder: React.FC = (): JSX.Element => {
   const [activeContentTypeId, setActiveContentTypeId] = React.useState<number>(-1);
+  const [createContentTypeModalOpen, setCreateContentTypeModelOpen] = React.useState<boolean>(false);
 
   return <>
     <div className="flex flex-row w-full min-h-screen max-h-screen">
@@ -26,22 +27,25 @@ const ContentTypeBuilder: React.FC = (): JSX.Element => {
                 </div>
 
                 <div className="mt-5">
-                  <div className="bg-generic-light cursor-pointer font-semibold border-dotted border-2 rounded-md flex items-center justify-center border-primary p-3 text-primary">
+                  <button
+                    className="bg-generic-light cursor-pointer w-full font-semibold border-dotted border-2 rounded-md flex items-center justify-center border-primary p-3 text-primary"
+                    onClick={() => setCreateContentTypeModelOpen(true)}
+                  >
                     + New Type
-                  </div>
-                  
-                  <ContentTypeEntry 
-                    activeContentTypeId={activeContentTypeId} 
+                  </button>
+
+                  <ContentTypeEntry
+                    activeContentTypeId={activeContentTypeId}
                     contentTypeId={1}
-                    contentTypeName="Company_Profile" 
+                    contentTypeName="Company_Profile"
                     numInstance={13}
                     onClick={() => setActiveContentTypeId(1)}
                   />
-                  
-                  <ContentTypeEntry 
-                    activeContentTypeId={activeContentTypeId} 
+
+                  <ContentTypeEntry
+                    activeContentTypeId={activeContentTypeId}
                     contentTypeId={2}
-                    contentTypeName="Company_Profile" 
+                    contentTypeName="Company_Profile"
                     numInstance={13}
                     onClick={() => setActiveContentTypeId(2)}
                   />
@@ -53,6 +57,21 @@ const ContentTypeBuilder: React.FC = (): JSX.Element => {
           <FieldsDisplay contentTypeId={activeContentTypeId} />
         </div>
       </div>
+
+      <Modal isOpen={createContentTypeModalOpen} buttons={
+        [
+          <button key={1} className="rounded-md p-2 font-semibold mb-4 mr-2"
+            onClick={() => setCreateContentTypeModelOpen(false)}>
+            Cancel
+          </button>,
+          <StyledButton key={2} text="Create" className="ml-6 mb-4 mr-6 w-28" />
+        ]
+      }>
+        <div className="flex flex-col w-full">
+          <h3 className="text-gray-600 font-bold text-xl">Create a new content type</h3>
+          <InputField label={'Name of the content type'} onChange={() => {return;}} />
+        </div>
+      </Modal>
     </div>
   </>;
 }
