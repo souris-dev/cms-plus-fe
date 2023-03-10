@@ -1,8 +1,8 @@
-import ContentType from '..';
+import ContentTypeBuilder from '..';
 
 describe('ContentType', () => {
   xit('renders', () => {
-    
+    return;
   })
 })
 

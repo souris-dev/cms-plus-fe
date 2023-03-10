@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import './ContentType.css';
+import './ContentTypeBuilder.css';
 
 import deleteFieldIcon from '../../assets/delete-field.png';
 import editFieldIcon from '../../assets/edit-field.png';
 import editCtypeNameIcon from '../../assets/edit-ctype-name.png';
 
-const ContentType: React.FC = (): JSX.Element => {
+const ContentTypeBuilder: React.FC = (): JSX.Element => {
   return <>
     <div className="flex flex-row w-full min-h-screen max-h-screen">
       <div className="w-1/5 flex flex-col">
@@ -142,5 +142,5 @@ const ContentType: React.FC = (): JSX.Element => {
   </>;
 }
 
-export default ContentType;
+export default ContentTypeBuilder;
 
