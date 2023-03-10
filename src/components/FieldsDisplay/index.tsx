@@ -15,6 +15,9 @@ const FieldsDisplay: React.FC<FieldsDisplayProps>
   = ({ contentTypeId }: FieldsDisplayProps): JSX.Element => {
     return <>
       <div className="bg-generic w-3/4 pl-8 pr-8">
+        {contentTypeId != undefined && contentTypeId > 0
+          &&
+          <>
             <div className="mt-8 text-3xl font-bold text-gray-600 flex items-center">
               <div>Company_Profile</div>
               <button>
@@ -32,9 +35,10 @@ const FieldsDisplay: React.FC<FieldsDisplayProps>
             <FieldEntry fieldName="Name" />
             <FieldEntry fieldName="Contact Number" />
             <FieldEntry fieldName="Age" />
-          </div>
+          </>}
+      </div>
     </>;
-}
+  }
 
 FieldsDisplay.propTypes = FieldsDisplayPropTypes;
 

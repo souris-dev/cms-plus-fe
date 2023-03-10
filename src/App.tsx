@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route element={<Login />} path={HOMEPAGE_ROUTE} />
           <Route element={<ContentTypeBuilder />} path={'/contentTypes'} />
-          <Route element={<Collections />} path={'/collections'} />
+          <Route element={<Collections />} path={'/collections/:contentTypeId'} />
         </Routes>
       </BrowserRouter>
     </>

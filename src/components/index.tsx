@@ -7,3 +7,7 @@ export { default as ContentTypeEntry } from './ContentTypeEntry';
 export { default as FieldEntry } from './FieldEntry';
 
 export { default as FieldsDisplay } from './FieldsDisplay';
+
+export { default as Sidebar } from './Sidebar';
+
+export { default as SidebarCollectionEntry } from './SidebarCollectionEntry';
