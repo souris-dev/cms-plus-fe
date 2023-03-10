@@ -15,3 +15,5 @@ export { default as Modal } from './Modal';
 export { default as InputField } from './InputField';
 
 export { default as StyledButton } from './StyledButton';
+
+export { default as WithAuth } from './WithAuth';

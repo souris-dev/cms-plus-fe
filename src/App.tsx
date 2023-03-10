@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import { WithAuth } from './components';
 import { HOMEPAGE_ROUTE } from './constants/routes';
 
 import { Collections, ContentTypeBuilder, Login } from './pages';
